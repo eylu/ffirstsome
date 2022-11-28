@@ -28,4 +28,4 @@ jobs:
       - run: bundle install --path vendor/bundle
 
       - name: Run rspec tests
-        run: bundle exec rspec
+        run: bundle exec rspec spec/service
