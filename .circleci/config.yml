@@ -15,6 +15,14 @@ jobs:
     steps:
       - checkout
 
+      # Bundle install dependencies
+      - run:
+          name: install dependencies
+          command: |
+            gem update --system
+            gem install bundler
+            bundle install --path vendor/bundle --without production development
+
       # run RSpec
       - run: bundle exec rspec spec/
 
