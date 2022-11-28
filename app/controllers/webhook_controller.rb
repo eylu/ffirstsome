@@ -5,7 +5,7 @@ class WebhookController < ApplicationController
   end
 
   def github
-
+    puts "====> #{params[:payload]} ==>"
     render plain: 'github web hook'
   end
 end
