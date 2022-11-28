@@ -1,4 +1,4 @@
-class Article < ApplicationRecord
+class Article
 
   def read_star
     sleep(3)
