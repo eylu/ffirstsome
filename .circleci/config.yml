@@ -5,24 +5,22 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
-    working_directory: ~/ffirstsome
+  say-hello:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: circleci/ruby:3.0.3-browsers
-        environment:
-          RAILS_ENV: test
-
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-
-      # Bundle install dependencies
       - run:
-          name: install dependencies
-          command: |
-            gem update --system
-            gem install bundler
-            bundle install --path vendor/bundle --without production development
+          name: "Say hello"
+          command: "echo Hello, World!"
 
-      # run RSpec
-      - run: bundle exec rspec spec/
-
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
