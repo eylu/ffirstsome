@@ -18,6 +18,9 @@ jobs:
       - checkout
 
       - run: bundle install --path vendor/bundle --without production development
+
+      - run: bundle exec rake workflow:generate_start
+
       # Run RSpec
       - run: bundle exec rspec spec/
 
