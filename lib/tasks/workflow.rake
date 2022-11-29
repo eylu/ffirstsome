@@ -23,7 +23,7 @@ namespace :workflow do
     branch = ENV['branch']
     workflow_run_number = ENV['workflow_run_number']
     time = Time.zone.now
-    puts "====== github start workflow ==> #{workflow_id} , #{branch}, #{time}"
+    puts "====== github start workflow ==> #{workflow_id} , #{branch}, #{workflow_run_number}, #{time}"
     puts "存入数据库..."
   end
 
@@ -34,6 +34,6 @@ namespace :workflow do
     workflow_run_number = ENV['workflow_run_number']
     time = Time.zone.now
     puts "根据 workflow_id 取出数据。 ok"
-    puts "====== github end workflow ==> #{workflow_id} , #{branch}, #{time}"
+    puts "====== github end workflow ==> #{workflow_id} , #{branch}, #{workflow_run_number}, #{time}"
   end
 end
