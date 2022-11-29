@@ -19,12 +19,14 @@ jobs:
 
       - run: bundle install --path vendor/bundle --without production development
 
-      - run: bundle exec rake workflow:generate_start workflow_id=$CIRCLE_WORKFLOW_ID branch=<< pipeline.git.branch >>
+      - name: 'workflow:generate_start'
+        run: bundle exec rake workflow:generate_start workflow_id=$CIRCLE_WORKFLOW_ID branch=<< pipeline.git.branch >>
 
       # Run RSpec
       - run: bundle exec rspec spec/
 
-      - run: bundle exec rake workflow:generate_end workflow_id=$CIRCLE_WORKFLOW_ID branch=<< pipeline.git.branch >>
+      - name: 'workflow:generate_end'
+        run: bundle exec rake workflow:generate_end workflow_id=$CIRCLE_WORKFLOW_ID branch=<< pipeline.git.branch >>
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

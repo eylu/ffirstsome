@@ -16,4 +16,22 @@ namespace :workflow do
     puts "根据 workflow_id 取出数据。 ok"
     puts "====== end workflow ==> #{workflow_id} , #{branch}, #{time}"
   end
+
+  desc 'record a workflow begin at for github'
+  task generate_github_start: :environment do
+    workflow_id = ENV['workflow_id']
+    # branch = ENV['branch']
+    time = Time.zone.now
+    puts "====== github start workflow ==> #{workflow_id} , #{time}"
+    puts "存入数据库..."
+  end
+
+  desc 'record a workflow end at for github'
+  task generate_github_end: :environment do
+    workflow_id = ENV['workflow_id']
+    # branch = ENV['branch']
+    time = Time.zone.now
+    puts "根据 workflow_id 取出数据。 ok"
+    puts "====== github end workflow ==> #{workflow_id} , #{time}"
+  end
 end
