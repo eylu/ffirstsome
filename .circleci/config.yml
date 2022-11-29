@@ -19,7 +19,7 @@ jobs:
 
       - run: bundle install --path vendor/bundle --without production development
 
-      - run: bundle exec rake workflow:generate_start
+      - run: bundle exec rake workflow:generate_start pipline_id=<< pipeline.id >>
 
       # Run RSpec
       - run: bundle exec rspec spec/
