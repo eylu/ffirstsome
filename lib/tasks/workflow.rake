@@ -13,7 +13,7 @@ namespace :workflow do
     workflow_id = ENV['workflow_id']
     branch = ENV['branch']
     time = Time.zone.now
-    puts "根据 workflow_id 取出数据"
+    puts "根据 workflow_id 取出数据。 ok"
     puts "====== end workflow ==> #{workflow_id} , #{branch}, #{time}"
   end
 end
