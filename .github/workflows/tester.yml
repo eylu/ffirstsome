@@ -28,10 +28,10 @@ jobs:
       - run: bundle install --path vendor/bundle
 
       - name: workflow:generate_start
-        run: bundle exec rake workflow:generate_github_start workflow_id='${{ github.workflow }}' branch=${{ github.head_ref || github.ref_name }}
+        run: bundle exec rake workflow:generate_github_start workflow_sha=$GITHUB_SHA branch=${{ github.head_ref || github.ref_name }}
 
       - name: Run rspec tests
         run: bundle exec rspec spec/service
 
       - name: workflow:generate_end
-        run: bundle exec rake workflow:generate_github_end workflow_id='${{ github.workflow }}' branch=${{ github.head_ref || github.ref_name }}
+        run: bundle exec rake workflow:generate_github_end workflow_sha=$GITHUB_SHA branch=${{ github.head_ref || github.ref_name }}
