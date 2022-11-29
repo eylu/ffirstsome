@@ -19,7 +19,7 @@ namespace :workflow do
 
   desc 'record a workflow begin at for github'
   task generate_github_start: :environment do
-    workflow_id = ENV['workflow_sha']
+    workflow_id = ENV['workflow_id']
     branch = ENV['branch']
     workflow_run_number = ENV['workflow_run_number']
     time = Time.zone.now
@@ -29,7 +29,7 @@ namespace :workflow do
 
   desc 'record a workflow end at for github'
   task generate_github_end: :environment do
-    workflow_id = ENV['workflow_sha']
+    workflow_id = ENV['workflow_id']
     branch = ENV['branch']
     workflow_run_number = ENV['workflow_run_number']
     time = Time.zone.now
