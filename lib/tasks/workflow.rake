@@ -33,7 +33,7 @@ namespace :workflow do
     branch = ENV['branch']
     workflow_run_number = ENV['workflow_run_number']
     time = Time.zone.now
-    puts "根据 workflow_id 取出数据。 ok"
+    puts "根据 workflow_id 取出数据"
     puts "====== github end workflow ==> #{workflow_id} , #{branch}, #{workflow_run_number}, #{time}"
   end
 end
