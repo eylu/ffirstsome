@@ -1,7 +1,7 @@
 class Star
 
   def self.read_star
-    sleep(3 * 60)
+    sleep(1 * 60 + 20)
     6 * 10
   end
 end
