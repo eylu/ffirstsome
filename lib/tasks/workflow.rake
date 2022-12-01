@@ -76,6 +76,9 @@ namespace :workflow do
   end
 
   def post_data(data)
-    HTTParty.post('http://localhost:3000/api/ci', body: JSON.generate(data), headers: { 'Content-Type' => 'application/json' })
+    HTTParty.post('https://ci-api.feedmob.info/api/ci', body: JSON.generate(data), headers: { 'Content-Type' => 'application/json' })
+
+    # HTTParty.post('http://localhost:3000/api/ci', body: JSON.generate(data), headers: { 'Content-Type' => 'application/json' })
+
   end
 end
