@@ -23,3 +23,6 @@ Things you may want to cover:
 
 * ...
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/feed-mob/feedmob_admin/tree/master.svg?style=svg&circle-token=80e8d45048154c6db17757cb9710e1a1fe3354de)](https://dl.circleci.com/status-badge/redirect/gh/feed-mob/feedmob_admin/tree/master)
+
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/feed-mob/feedmob_admin/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/feed-mob/feedmob_admin/tree/master)
